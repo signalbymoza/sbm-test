@@ -13,11 +13,10 @@
         }
         #container {
             position: relative;
-            width: 430px; /* عرض الصورة لتناسب الآيفون */
-            height: 932px; /* ارتفاع الصورة لتناسب الآيفون */
-            margin: 20px auto;
+            width: 100vw; /* عرض الحاوية بنفس عرض الشاشة */
+            height: 100vh; /* ارتفاع الحاوية بنفس ارتفاع الشاشة */
             background: url('sbm+.jpg') no-repeat center center;
-            background-size: cover;
+            background-size: cover; /* لجعل الصورة تغطي الحاوية بالكامل */
         }
         .hotspot {
             position: absolute;
@@ -32,63 +31,59 @@
 
         /* تخصيص المربعات بالمواقع الجديدة */
         #box1 {
-            top: 150px; 
-            left: 30px; 
-            width: 120px; 
-            height: 200px; 
+            top: 15%; 
+            left: 5%; 
+            width: 20%; 
+            height: 25%; 
         }
         #box2 {
-            top: 150px; 
-            left: 160px; 
-            width: 120px; 
-            height: 200px; 
+            top: 15%; 
+            left: 30%; 
+            width: 20%; 
+            height: 25%; 
         }
         #box3 {
-            top: 150px; 
-            left: 290px; 
-            width: 120px; 
-            height: 200px; 
+            top: 15%; 
+            left: 55%; 
+            width: 20%; 
+            height: 25%; 
         }
         #box4 {
-            top: 400px; 
-            left: 30px; 
-            width: 180px; 
-            height: 200px; 
+            top: 50%; 
+            left: 5%; 
+            width: 40%; 
+            height: 20%; 
         }
         #box5 {
-            top: 400px; 
-            left: 230px; 
-            width: 180px; 
-            height: 200px; 
+            top: 50%; 
+            left: 55%; 
+            width: 40%; 
+            height: 20%; 
         }
         #box6 {
-            top: 650px; 
-            left: 30px; 
-            width: 180px; 
-            height: 200px; 
+            top: 75%; 
+            left: 5%; 
+            width: 40%; 
+            height: 20%; 
         }
         #box7 {
-            top: 650px; 
-            left: 230px; 
-            width: 180px; 
-            height: 200px; 
+            top: 75%; 
+            left: 55%; 
+            width: 40%; 
+            height: 20%; 
         }
         h1 {
-            font-size: 24px; /* تقليل حجم الخط لتناسب الشاشات الصغيرة */
-            color: #333;
-            margin: 20px 0;
-            letter-spacing: 5px; /* زيادة المسافة بين الأحرف */
+            font-size: 24px;
+            color: #fff;
+            margin: 10px 0;
+            letter-spacing: 5px;
             text-transform: uppercase;
-            white-space: nowrap; /* منع التفاف النص */
-        }
-        @media (max-width: 430px) {
-            #container {
-                width: 100%;
-                height: auto;
-            }
-            h1 {
-                font-size: 20px;
-            }
+            white-space: nowrap;
+            position: absolute;
+            top: 5%; /* وضع العنوان أعلى الصفحة */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10; /* لجعل النص فوق الصورة */
         }
     </style>
 </head>
