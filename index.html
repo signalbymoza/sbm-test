@@ -95,7 +95,15 @@
             border-radius: 10px;
             text-align: center;
             z-index: 1000;
-            display: none; /* إخفاء الرسالة افتراضيًا */
+        }
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5); /* خلفية شفافة تغطي الصفحة */
+            z-index: 999;
         }
         #welcome-message p {
             margin: 10px 0;
@@ -117,12 +125,12 @@
     </style>
 </head>
 <body>
-    <h1>S I G N A L   B Y   M O Z A</h1>
+    <div id="overlay"></div>
     <div id="welcome-message">
         <p>Welcome to Signal By Moza</p>
-        <p>مرحبا بكم في قناة SBM</p>
         <button id="close-button">Close</button>
     </div>
+    <h1>S I G N A L   B Y   M O Z A</h1>
     <div id="container">
         <!-- الروابط التفاعلية -->
         <a href="https://sbmoza.me/blog" class="hotspot" id="box1" title="Blog"></a>
@@ -137,11 +145,15 @@
         // عرض الرسالة الترحيبية عند تحميل الصفحة
         window.onload = function() {
             const welcomeMessage = document.getElementById('welcome-message');
+            const overlay = document.getElementById('overlay');
+
+            overlay.style.display = 'block';
             welcomeMessage.style.display = 'block';
 
             const closeButton = document.getElementById('close-button');
             closeButton.onclick = function() {
                 welcomeMessage.style.display = 'none';
+                overlay.style.display = 'none';
             };
         };
     </script>
